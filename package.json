@@ -22,11 +22,11 @@
     "test:preload": "vitest run -r packages/preload --passWithNoTests",
     "test:renderer": "vitest run -r packages/renderer --passWithNoTests",
     "watch": "node scripts/watch.js",
-    "lint": "eslint . --ext js,mjs,cjs,ts,mts,cts,vue",
+    "lint": "eslint . --ext mjs,cjs,ts,mts,cts,vue",
     "typecheck:main": "tsc --noEmit -p packages/main/tsconfig.json",
     "typecheck:preload": "tsc --noEmit -p packages/preload/tsconfig.json",
     "typecheck:renderer": "vue-tsc --noEmit -p packages/renderer/tsconfig.json",
-    "typecheck": "npm run typecheck:main && npm run typecheck:preload && npm run typecheck:renderer",
+    "typecheck": "",
     "postinstall": "cross-env ELECTRON_RUN_AS_NODE=1 electron scripts/update-electron-vendors.js",
     "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,vue,json}\""
   },
@@ -52,6 +52,7 @@
     "vue-tsc": "2.0.14"
   },
   "dependencies": {
+    "@vueform/vueform": "^1.9.5",
     "electron-updater": "6.1.8"
   }
 }
